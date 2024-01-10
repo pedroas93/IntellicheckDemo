@@ -1,0 +1,19 @@
+/* H1 Style */
+.text-primary-300 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: #020E33; /* Adjusted color as per your request */
+  }
+  
+  /* Body Style */
+  .text-center {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #B4B7C2; /* Adjusted color as per your request */
+  }

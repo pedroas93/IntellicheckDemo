@@ -1,0 +1,14 @@
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    /* 14px at the default browser font size of 16px */
+    padding: 10px 0;
+}
+
+.text-gray-600 {
+    color: #4a5568;
+    /* Adjust the color code based on your design */
+}
