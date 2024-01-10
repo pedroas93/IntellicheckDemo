@@ -54,6 +54,23 @@ export const LoginForm: FC<LoginFormProps> = () => {
 
       const response = await axios.post(apiUrl, credentials);
       console.log("Response Data:", response.data);
+
+      const credentialsAuth = {
+        userName: "juanperez",
+        isTemporalUser: false
+      };
+
+      const apiUrlAuth = "https://authsystem-ysxx.onrender.com/auth-user";
+      const responseAuth = await axios.post(apiUrlAuth, credentials);
+
+      console.log("responseAuth Data:", responseAuth.data)
+
+      if(responseAuth.data.role = "superAdmin"){
+        void navigate({ to: `/homeAdmin` });
+      } else {
+        void navigate({ to: `/homeUser` });
+      }
+
     } catch (error) {
       console.log(error);
       setLoginError("Login failed. Please check your credentials.");
