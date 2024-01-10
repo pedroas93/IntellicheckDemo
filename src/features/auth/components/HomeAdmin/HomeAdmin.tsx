@@ -22,10 +22,10 @@ type LoginData = {
   password: string;
 };
 
-type HomeAdminProps = {
+type HomeAdminFormProps = {
 };
 
-export const HomeAdmin: FC<HomeAdminProps> = () => {
+export const HomeAdminForm: FC<HomeAdminFormProps> = () => {
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState<string | null>(null);
   const {
@@ -58,7 +58,7 @@ export const HomeAdmin: FC<HomeAdminProps> = () => {
     }
   };
   return (
-    <div className="HomeAdmin">
+    <div className="HomeAdminForm">
       <div className="flex flex-col items-right  gap-3 h-full w-full">
         <LoginTitle
           title={"Welcome Admin!"}

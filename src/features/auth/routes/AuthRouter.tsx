@@ -1,18 +1,21 @@
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
+import { HomeAdmin } from "../pages/HomeAdmin";
+import { HomeUser} from "../pages/HomeUser";
 import { LoginLayout } from "../../../components/layout/Login";
 import UnauthenticatedRoute from "../../../routes/routes";
-import { Home } from "../pages/Home/Home";
 
 export const AuthRoutesNames = {
 	login: "/login",
-	register:"/register"
+	register:"/register",
+	homeAdmin:"/homeAdmin",
+	homeUser:"/homeUser",
 };
 
 const AuthRoutes = [
 	{
-		path: `/`,
-		page: Home,
+		path: `${AuthRoutesNames.homeAdmin}`,
+		page: HomeAdmin,
 		layout: LoginLayout,
 	},
 	{
@@ -23,6 +26,11 @@ const AuthRoutes = [
 	{
 		path: `${AuthRoutesNames.register}`,
 		page: Register,
+		layout: LoginLayout,
+	},
+	{
+		path: `${AuthRoutesNames.homeUser}`,
+		page: HomeUser,
 		layout: LoginLayout,
 	},
 ];

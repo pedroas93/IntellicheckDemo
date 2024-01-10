@@ -17,10 +17,10 @@ type LoginData = {
   password: string;
 };
 
-type HomeUserProps = {
+type HomeUserFormProps = {
 };
 
-export const HomeUser: FC<HomeUserProps> = () => {
+export const HomeUserForm: FC<HomeUserFormProps> = () => {
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState<string | null>(null);
   const {
@@ -54,7 +54,7 @@ export const HomeUser: FC<HomeUserProps> = () => {
     }
   };
   return (
-    <div className="HomeUser">
+    <div className="HomeUserForm">
       <div className="flex flex-col items-right  gap-3 h-full w-full">
         <LoginTitle
           title={"Welcome back!"}
