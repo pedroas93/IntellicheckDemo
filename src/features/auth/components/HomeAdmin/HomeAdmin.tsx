@@ -15,7 +15,7 @@ import type { LoginFields } from "../../types/validations";
 import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
-import "./register.css";
+import "./HomeAdmin.css";
 
 type LoginData = {
   email: string;
