@@ -6,24 +6,21 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { type FC, useState } from "react";
 import { LoginSchema } from "../../utils/Schemas/LoginSchemas";
 import { Button } from "../../../../components/ui/Button";
-import { PasswordInput } from "../../../../components/forms/PasswordInput";
 import { Input } from "../../../../components/forms/Input";
-import { Message } from "primereact/message";
 import { LoginTitle } from "../LoginTitle";
 import { loginFields } from "../../utils/input-fields";
 import type { LoginFields } from "../../types/validations";
 import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
-import "./HomeAdmin.css";
+import "./homeAdmin.css";
 
 type LoginData = {
   email: string;
   password: string;
 };
 
-type HomeAdminFormProps = {
-};
+type HomeAdminFormProps = {};
 
 export const HomeAdminForm: FC<HomeAdminFormProps> = () => {
   const navigate = useNavigate();
@@ -37,17 +34,23 @@ export const HomeAdminForm: FC<HomeAdminFormProps> = () => {
   });
 
   const goToLogin = (): void => {
-		void navigate({ to: `/login` });
-	};
+    void navigate({ to: `/login` });
+  };
 
   const onSubmit: SubmitHandler<any> = async (
     data: LoginFields
   ): Promise<void> => {
     try {
-      const apiUrl = "https://authsystem-ysxx.onrender.com/create-company";
+      const apiUrl = "https://authsystem-ysxx.onrender.com/auth-user";
 
       const credentials = {
-        companyName: "Revstar",
+        userName: "juanperez",
+        email: "juan@gmail.com",
+        password: "12345678",
+        isTemporalUser: true,
+        expirationTime: "3",
+        role: "admin",
+        companyName: "pepsico",
       };
 
       const response = await axios.post(apiUrl, credentials);
@@ -72,6 +75,34 @@ export const HomeAdminForm: FC<HomeAdminFormProps> = () => {
             <div className="flex  flex-col justify-between w-full  gap-8 textInput">
               <Input
                 register={register(loginFields?.email)}
+                label="User Name"
+                placeholder="User Name"
+                required
+                error={errors[loginFields?.email]?.message}
+              />
+              <Input
+                register={register(loginFields?.isTemporalUser)}
+                label="User Name"
+                placeholder="User Name"
+                required
+                error={errors[loginFields?.email]?.message}
+              />
+              <Input
+                register={register(loginFields?.expirationTime)}
+                label="User Name"
+                placeholder="User Name"
+                required
+                error={errors[loginFields?.email]?.message}
+              />
+              <Input
+                register={register(loginFields?.role)}
+                label="User Name"
+                placeholder="User Name"
+                required
+                error={errors[loginFields?.email]?.message}
+              />
+              <Input
+                register={register(loginFields?.companyName)}
                 label="User Name"
                 placeholder="User Name"
                 required

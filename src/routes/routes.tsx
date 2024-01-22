@@ -55,7 +55,7 @@ export const AuthenticatedRoute = (routes: Array<Props>) => {
 	});
 };
 
-export const InvestorRoute = (routes: Array<Props>) => {
+export const AdminRoute = (routes: Array<Props>) => {
 	return routes.map(({ page: Page, layout: Layout, path }) => {
 		return new Route({
 			path,

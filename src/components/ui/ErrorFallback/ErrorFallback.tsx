@@ -1,19 +1,13 @@
-import { ReactElement, useEffect, useRef } from "react";
-import { Toast } from "primereact/toast";
+import React from "react";
+import { Toast } from "react-bootstrap";
 
-export const ErrorFallback = (): ReactElement => {
-	const toast = useRef<Toast>(null);
-
-	useEffect(() => {
-		if (toast.current) {
-			toast.current.show({
-				severity: "error",
-				summary: "Error Message",
-				detail: "Something went wrong!",
-				life: 5000,
-			});
-		}
-	}, []);
-
-	return <Toast ref={toast} />;
+export const ErrorFallback = () => {
+  return (
+    <Toast>
+      <Toast.Header closeButton={false}>
+        <strong className="me-auto">Error Message</strong>
+      </Toast.Header>
+      <Toast.Body>Something went wrong!</Toast.Body>
+    </Toast>
+  );
 };

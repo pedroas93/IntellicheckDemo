@@ -4,76 +4,73 @@ import type { FieldValues, SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type FC, useState } from "react";
-import { LoginSchema } from "../../utils/Schemas/LoginSchemas";
+import { RecoverySchema } from "../../utils/Schemas/LoginSchemas";
 import { Button } from "../../../../components/ui/Button";
 import { PasswordInput } from "../../../../components/forms/PasswordInput";
+import { getLocalStorage } from "../../../../utils/local-storage";
 import { Input } from "../../../../components/forms/Input";
-import { Message } from "primereact/message";
+import Alert from "react-bootstrap/Alert";
 import { LoginTitle } from "../LoginTitle";
-import { loginFields } from "../../utils/input-fields";
-import type { LoginFields } from "../../types/validations";
+import { recoveryPasswordField } from "../../utils/input-fields";
+import type { RecoveryPassword } from "../../types/validations";
 import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
-import "./login.css";
+import "./recoveryPassword.css";
 
-type LoginData = {
-  email: string;
+type RecoveryPasswordFormData = {
   password: string;
+  confirmPassword: string;
 };
 
-type LoginFormProps = {
-  handleSuccessLogin?: (data: LoginData) => void;
-};
+type RecoveryPasswordFormProps = {};
 
-export const LoginForm: FC<LoginFormProps> = () => {
+export const recoveryPasswordForm: FC<RecoveryPasswordFormProps> = () => {
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState<string | null>(null);
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const codeResetPassword = getLocalStorage("codeResetPassword");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>({
-    resolver: zodResolver(LoginSchema),
+    resolver: zodResolver(RecoverySchema),
   });
 
-  const signUp = (): void => {
-    void navigate({ to: `/register` });
+  const goLogin = (): void => {
+    void navigate({ to: `/login` });
   };
 
-  const handleForgotPassword = (): void => {
-    void navigate({ to: `/forgotPassword` });
+  const go2fa = (): void => {
+    // const componentName = "recoveryPasswordForm";
+    // void navigate({ to: `/successProcess`, state: { componentName } });
   };
 
   const onSubmit: SubmitHandler<any> = async (
-    data: LoginFields
+    data: RecoveryPassword
   ): Promise<void> => {
     try {
-      // const apiUrl = "http://localhost:3000/login";
+      // console.log("Enter here");
 
-      // console.log("What is data ---> ", data);
+      const apiUrl = `http://localhost:3000/reset-password/${codeResetPassword}`;;
+      console.log("What is data ---> ", data);
+      const response = await axios.post(apiUrl, data);
+      console.log("Response Data:", response.data);
+      void navigate({ to: `/successProcess` });
 
-      // const response = await axios.post(apiUrl, data);
-      // console.log("Response Data:", response.data);
-
-      // if ((response.data.role = "superAdmin")) {
-      const componentName = "Login";
-
-      void navigate({ to: `/secondFAAdmina`, state: { componentName } });
-      // } else {
-      //   void navigate({ to: `/homeUser` });
-      // }
     } catch (error) {
       console.log(error);
-      setLoginError("Login failed. Please check your credentials.");
+      setLoginError("reset-password failed. Please check your credentials.");
     }
   };
+
   return (
-    <div className="LoginForm">
-      <div className="flex flex-col items-right  gap-3 h-full w-full">
+    <div className="recoveryPasswordForm">
+      <div className="flex flex-col items-right gap-3 h-full w-full">
         <LoginTitle
-          title={"Welcome!"}
-          subTitle={"Please enter your login credentials to proceed"}
+          title={"Forgot Password!"}
+          subTitle={"Enter a new secure password"}
         >
           <hr className=" w-full" />
           <form
@@ -81,36 +78,27 @@ export const LoginForm: FC<LoginFormProps> = () => {
             className="w-full h-full flex flex-col justify-between"
           >
             <div className="flex  flex-col justify-between w-full  gap-8 textInput">
-              <Input
-                register={register(loginFields?.email)}
-                label="Email Address"
-                placeholder="Enter Email Address"
-                required
-                error={errors[loginFields?.email]?.message}
-              />
               <PasswordInput
-                register={register(loginFields?.password)}
-                label="Password"
+                register={register(recoveryPasswordField?.password)}
+                label="Create Password"
                 placeholder="Enter Password"
                 required
-                error={errors[loginFields?.password]?.message}
+                error={errors[recoveryPasswordField?.recoveryPassword]?.message}
+              />
+              <PasswordInput
+                register={register(recoveryPasswordField?.recoveryPassword)}
+                label="Confirm Password"
+                placeholder="Enter Password"
+                required
+                error={errors[recoveryPasswordField?.recoveryPassword]?.message}
               />
               {loginError && <Message severity="error" text={loginError} />}
             </div>
-            <div className=" texts-send-code ">
-              <>
-                <div
-                  onClick={handleForgotPassword}
-                  className="bg-secundary-200"
-                >
-                  ForgotPassword
-                </div>
-              </>
-            </div>
+
             <div className="flex flex-col gap-1 buttonText">
               <Button
                 type="submit"
-                buttonText="Login"
+                buttonText="Confirm"
                 className="bg-primary-500 h-12"
               />
             </div>

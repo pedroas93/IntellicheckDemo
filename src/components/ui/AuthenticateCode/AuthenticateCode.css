@@ -1,0 +1,35 @@
+
+.font-semibold {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: #4B5563;
+}
+
+.text-red-ERROR {
+    color: #EF4444;
+}
+
+.flex.gap-2.justify-between {
+    display: flex;
+    gap: 2px;
+    justify-content: space-between;
+}
+
+.w-10.h-10.text-24.text-center.border.bg-gray-200.rounded {
+    width: 40px;
+    height: 40px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    border-radius: 12px;
+    background: #F3F5FA;
+    border: 0px solid #D1D5DB;
+    margin: 12px 12px; 
+}
