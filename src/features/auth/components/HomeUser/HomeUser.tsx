@@ -31,10 +31,6 @@ export const HomeUserForm: FC<HomeUserFormProps> = () => {
     resolver: zodResolver(LoginSchema),
   });
 
-  const SignUp = (): void => {
-		void navigate({ to: `/login` });
-	};
-
   const onSubmit: SubmitHandler<any> = async (
     data: LoginFields
   ): Promise<void> => {
