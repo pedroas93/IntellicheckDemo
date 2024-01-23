@@ -12,7 +12,7 @@ import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
 import "./SuccessProcess.css";
-import DigitalKey from "../../../../assets/Images/png/DigitalKey.png";
+// import DigitalKey from "../../../../assets/Images/png/DigitalKey.png";
 
 type SuccessProcess = {};
 
@@ -75,7 +75,7 @@ export const SuccessProcess: FC<SuccessProcess> = () => {
             }}
             >
               <img
-                src={DigitalKey}
+                // src={DigitalKey}
                 alt="Description of the Image"
               />
             </div>
