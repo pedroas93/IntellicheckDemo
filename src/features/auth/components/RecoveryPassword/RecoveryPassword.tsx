@@ -16,7 +16,7 @@ import type { RecoveryPassword } from "../../types/validations";
 import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
-import "./recoveryPassword.css";
+import "./RecoveryPassword.css";
 
 type RecoveryPasswordFormData = {
   password: string;
