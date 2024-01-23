@@ -8,7 +8,7 @@ import { ResetPasswordMfa } from "../pages/ResetPasswordMfa";
 import {secondFARegister} from "../pages/SecondFARegister"
 import { ForgotPasswordForm } from "../components/ForgotPassword";
 import { recoveryPasswordForm } from "../components/RecoveryPassword";
-import { SuccessProcess } from "../components/successProcess";
+import { SuccessProcess } from "../components/SuccessProcess";
 import { SecondFAAdmin } from "../pages/SecondFAAdmin";
 
 export const AuthRoutesNames = {
