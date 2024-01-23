@@ -10,7 +10,7 @@ import type { LoginFields } from "../../types/validations";
 import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
-import "./homeUser.css";
+// import "./homeUser.css";
 
 type LoginData = {
   email: string;
