@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "@/utils/story-book-css-export";
 import { Button } from "./Button";
-import { Icon } from "@/components/ui/Icon";
+// import { Icon } from "@/components/ui/Icon";
 
 const meta: Meta<typeof Button> = {
 	component: Button,
@@ -47,12 +47,12 @@ export const ButtonColor: Story = {
 	},
 };
 
-export const ButtonWithIcon: Story = {
-	args: {
-		buttonText: "Button Primary",
-		className: "w-full",
-		icon: <Icon name="user" />,
-		disabled: false,
-		loading: false,
-	},
-};
+// export const ButtonWithIcon: Story = {
+// 	args: {
+// 		buttonText: "Button Primary",
+// 		className: "w-full",
+// 		icon: <Icon name="user" />,
+// 		disabled: false,
+// 		loading: false,
+// 	},
+// };

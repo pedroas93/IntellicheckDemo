@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 // import { cn } from "@/utils/cn";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import "./Button.css";
+// import "./Button.css";
 
 export function cn(...inputs: Array<ClassValue>) {
 	return twMerge(clsx(inputs));
