@@ -4,12 +4,12 @@ import type { FieldValues, SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type FC, useState } from "react";
-import { LoginSchema } from "../../utils/Schemas/LoginSchemas";
+import { LoginSchema } from "../../../auth/utils/Schemas/LoginSchemas";
 import { Button } from "../../../../components/ui/Button";
 import { Input } from "../../../../components/forms/Input";
-import { LoginTitle } from "../LoginTitle";
-import { loginFields } from "../../utils/input-fields";
-import type { LoginFields } from "../../types/validations";
+import { LoginTitle } from "../../../auth/components/LoginTitle";
+import { loginFields } from "../../../auth/utils/input-fields";
+import type { LoginFields } from "../../../auth/types/validations";
 import { useNavigate } from "@tanstack/router";
 import axios from "axios";
 import React from "react";
@@ -73,7 +73,7 @@ export const HomeAdminForm: FC<HomeAdminFormProps> = () => {
             className="w-full h-full flex flex-col justify-between"
           >
             <div className="flex  flex-col justify-between w-full  gap-8 textInput">
-              <Input
+              {/* <Input
                 register={register(loginFields?.email)}
                 label="User Name"
                 placeholder="User Name"
@@ -107,7 +107,7 @@ export const HomeAdminForm: FC<HomeAdminFormProps> = () => {
                 placeholder="User Name"
                 required
                 error={errors[loginFields?.email]?.message}
-              />
+              /> */}
             </div>
             <div className="flex flex-col gap-1 buttonText">
               <Button

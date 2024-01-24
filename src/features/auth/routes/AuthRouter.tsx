@@ -21,7 +21,7 @@ export const AuthRoutesNames = {
   resetPasswordMfa: "/reset-password-mfa",
   secondFAAdmin: "/secondFAAdmina",
   homeUser: "/homeUser",
-  secondFARegister: "secondFARegister"
+  secondFARegister: "/secondFARegister"
 };
 
 const AuthRoutes = [

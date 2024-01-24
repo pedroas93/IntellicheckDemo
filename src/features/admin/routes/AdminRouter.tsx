@@ -1,25 +1,37 @@
 import { DashboardLayout } from "../../../components/layout/DashboardLayout/DashboardLayout";
-import { AdminRoute } from "../../../routes/routes";
-import { Users } from "../components/users/Users";
+import UnauthenticatedRoute from "../../../routes/routes";
+import { Admin } from "../pages/Admin/Admin";
 export const AdminRoutes = [
-	{
-		path: "/investors/reporting",
-		page: Users,
-		layout: DashboardLayout,
-		name: "Reporting",
-	},
+  {
+    path: "/manage-users/admins",
+    page: Admin,
+    layout: DashboardLayout,
+    name: "Reporting",
+  },
+  {
+    path: "/manage-companies/admins",
+    page: Admin,
+    layout: DashboardLayout,
+    name: "Companies",
+  },
 ];
 
-// const profileRoutes = [
-// 	{
-// 		path: "/investors/Profile",
-// 		page: Profile,
-// 		routeComponent: null,
-// 		layout: DashboardLayout,
-// 		name: "Manage Users",
-// 	},
-// ];
+export const NavbarData = {
+//   users: {
+//     path: "/manage-users/admin",
+//     page: Admin,
+//     routeComponent: null,
+//     layout: DashboardLayout,
+//     name: "Users",
+//   },
+  empty: {
+    path: "",
+    page: null,
+    layout: DashboardLayout,
+    name: "",
+  },
+};
 
-const InvestorRouter = AdminRoute([...AdminRoutes]);
+const InvestorRouter = UnauthenticatedRoute([...AdminRoutes]);
 
 export default InvestorRouter;

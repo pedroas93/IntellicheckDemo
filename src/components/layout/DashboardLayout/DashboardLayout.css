@@ -1,16 +1,28 @@
-.button-text {
-  font-size: 14px;
-  letter-spacing: -0.05em;
-  line-height: 17px;
+.adminView {
+  background: linear-gradient(to bottom, #yourStartColor, #yourEndColor);
 }
 
 .link-text {
-  font-size: 13px;
-  letter-spacing: -0.05em;
-  line-height: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 16px;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.bg-gradient {
-  background: rgb(14, 33, 48);
-  background: linear-gradient(180deg, rgba(14, 33, 48, 1) 0%, rgba(14, 33, 48, 1) 73%, rgba(191, 154, 105, 1) 100%);
+.link-text:hover {
+  opacity: 0.8;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.text-gray-1000 {
+  color: #1f2937;
 }

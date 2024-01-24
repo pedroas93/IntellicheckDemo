@@ -1,0 +1,104 @@
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #656a74 !important;
+  border: 0 none;
+  background-color: #edf3f5 !important;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-right: 0.5rem;
+  outline: none !important;
+}
+
+.p-dialog-header-icon:hover {
+  color: #656a74 !important;
+  border: 0 none;
+  background-color: #edf3f5 !important;
+  outline: none;
+}
+
+.p-dialog-header-icons button {
+  outline: none;
+  border: none;
+}
+
+.flex.absolute {
+  position: absolute;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.top-30px {
+  top: 30px;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.text-gray-1000 {
+  color: #1e293b; /* Adjust the color as needed */
+}
+
+.p-[5px] {
+  padding: 5px; /* You can adjust the value based on your preference */
+}
+
+.bg-gray-200 {
+  background-color: #edf2f7; /* Adjust the color as needed */
+}
+
+.rounded-[16px] {
+  border-radius: 16px; /* You can adjust the value based on your preference */
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.bg-white {
+  background-color: #ffffff; /* Adjust the color as needed */
+}
+
+.text-black {
+  color: #000000; /* Adjust the color as needed */
+}
+
+.text-[13px] {
+  font-size: 13px; /* You can adjust the value based on your preference */
+}

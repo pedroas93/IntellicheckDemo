@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { HomeAdminForm } from "../../components/HomeAdmin/HomeAdmin";
+import { HomeAdminForm } from "../../../admin/components/HomeAdmin/HomeAdmin";
 import React from "react";
 
 export const HomeAdmin: FC = () => {

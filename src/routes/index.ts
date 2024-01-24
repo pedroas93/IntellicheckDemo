@@ -1,14 +1,14 @@
 import { Router } from "@tanstack/router";
 
 import AuthRouter from "../features/auth/routes/AuthRouter";
-// import AdminRouter from "@/features/admin/routes/AdminRouter";
+import AdminRouter from "../features/admin/routes/AdminRouter";
 import AppRouter from "./AppRouter";
 import { RootRoute } from "./RootRoute";
 
 //array of all routes
 const allRoutes = [
 	...AppRouter,
-	// ...AdminRouter,
+	...AdminRouter,
 	...AuthRouter,
 ];
 

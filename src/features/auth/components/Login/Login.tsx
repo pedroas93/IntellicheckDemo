@@ -49,20 +49,20 @@ export const LoginForm: FC<LoginFormProps> = () => {
     data: LoginFields
   ): Promise<void> => {
     try {
-      // const apiUrl = "http://localhost:3000/login";
+      const apiUrl = "https://intellicheckbackend-production.up.railway.app/login";
 
-      // console.log("What is data ---> ", data);
+      console.log("What is data ---> ", data);
 
-      // const response = await axios.post(apiUrl, data);
-      // console.log("Response Data:", response.data);
+      const response = await axios.post(apiUrl, data);
+      console.log("Response Data:", response.data);
 
-      // if ((response.data.role = "superAdmin")) {
+      if ((response.data.role = "superAdmin")) {
       const componentName = "Login";
 
       void navigate({ to: `/secondFAAdmina`, state: { componentName } });
-      // } else {
-      //   void navigate({ to: `/homeUser` });
-      // }
+      } else {
+        void navigate({ to: `/homeUser` });
+      }
     } catch (error) {
       console.log(error);
       setLoginError("Login failed. Please check your credentials.");

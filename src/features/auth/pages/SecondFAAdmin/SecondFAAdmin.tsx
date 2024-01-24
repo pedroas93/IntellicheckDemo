@@ -26,7 +26,7 @@ export const SecondFAAdmin: FC = () => {
         // receptorCode={localEmail}
         labelData={hiddenEmail}
         emailAllow={false}
-        navigateTo={AuthRoutesNames.secondFAAdmin}
+        navigateTo={"/manage-users/admins"}
         backRoute={AuthRoutesNames.login}
         servicePath={servicePath}
       />

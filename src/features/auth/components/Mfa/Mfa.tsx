@@ -63,15 +63,26 @@ export const Mfa: FC<MfaProps> = ({
 
       console.log("what is labelData --> ", codeMfa);
 
-      const codeSend = {
-        recoveryCode: codeMfa,
-      };
+      let codeSend = {};
+      if (servicePath === "login-code") {
+        codeSend = {
+          loginCode: codeMfa,
+        };
+      } else {
+        codeSend = {
+          recoveryCode: codeMfa,
+        };
+      }
 
-      const apiUrl = `http://localhost:3000/${servicePath} `;
+      const apiUrl = `https://intellicheckbackend-production.up.railway.app/${servicePath} `;
       const response = await axios.post(apiUrl, codeSend);
       console.log("Response Data:", response.data);
 
-      if (servicePath === "login2fa" && response.data.success) {
+      if (
+        servicePath === "login-code" &&
+        response.data.message ===
+          "Verification code sent to your email or phone. Please verify."
+      ) {
         void navigate({ to: `/${navigateTo}` });
       }
       if (servicePath === "registerCode" && response.data.success) {
@@ -134,7 +145,11 @@ export const Mfa: FC<MfaProps> = ({
                 required
               />
             </div>
-            {errorMessage && <Alert className="alert" variant="danger">{errorMessage}</Alert>}
+            {errorMessage && (
+              <Alert className="alert" variant="danger">
+                {errorMessage}
+              </Alert>
+            )}
           </div>
           <div className=" texts-send-code ">
             {showBackButton && (
