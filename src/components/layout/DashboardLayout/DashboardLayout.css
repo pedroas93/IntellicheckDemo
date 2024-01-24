@@ -7,7 +7,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
   transition: opacity 0.2s ease-in-out;
 }
 
@@ -25,4 +25,60 @@
 
 .text-gray-1000 {
   color: #1f2937;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.h-screen {
+  height: 100vh !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.px-12 {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.containerDashboard{
+  background-color: #fff;
+}
+
+.ul-dashboard {
+  padding-inline-start: 0px !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  width: 15%;
+  
+  .flex-direction{
+    flex-direction: row;
+  }
+}
+
+.wrapper-top-bar{
+  background-color: #020E33;
+  border-radius: 9px;
+  margin: 20px 20px;
+  height: 25px;
 }

@@ -3,9 +3,9 @@
 import { type FC, type ReactNode, useEffect, useState } from "react";
 // import "@/assets/images/png/LogoGold_2x.png";
 import "./DashboardLayout.css";
+import Logo from "../../../assets/Images/png/Logo.png";
 import { Link, useNavigate } from "@tanstack/router";
 // import { InvestorRoutes } from "@/features/investor/routes/InvestorRouter.tsx";
-// import LogoGold from "@/assets/images/png/LogoGold.png";
 import React from "react";
 import { AdminRoutes } from "../../../features/admin/routes/AdminRouter";
 
@@ -15,10 +15,10 @@ type Props = {
 
 export const DashboardLayout: FC<Props> = ({ children }) => {
   return (
-    <div className="flex bg-cover bg-center w-screen h-screen box-border p-6 overflow-auto">
-      <div className="flex items-center justify-between px-12 py-4">
-        {/* <img src={LogoGold} alt="DKC Logo" /> */}
-        <ul className="flex space-x-2">
+    <div className="flex flex-col h-screen bg-gradient relative containerDashboard">
+      <div className="flex items-center justify-between px-12 py-4 wrapper-top-bar">
+        <img src={Logo} alt="Logo" />
+        <ul className="flex flex-direction flex-col space-x-2 ul-dashboard">
           {AdminRoutes.map(
             (route: {
               path: string;
@@ -40,9 +40,9 @@ export const DashboardLayout: FC<Props> = ({ children }) => {
                 </Link>
               )
           )}
-          <div className="flex m-2 h-screen overflow-y-auto">{children}</div>
         </ul>
       </div>
+      <div className="flex m-2 h-screen overflow-y-auto">{children}</div>
     </div>
   );
 };

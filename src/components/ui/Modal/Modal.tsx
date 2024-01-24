@@ -50,7 +50,7 @@ export const ModalComponent: FC<ModalProps> = ({
   };
 
   type RecoveryPassword = {
-    userName?: string;
+    name?: string;
     email?: string;
     password?: string;
     role?: string;
@@ -58,7 +58,7 @@ export const ModalComponent: FC<ModalProps> = ({
   };
 
   type ForgotPassword = {
-    userName?: string;
+    name?: string;
     email?: string;
     password?: string;
     role?: string;
@@ -66,7 +66,7 @@ export const ModalComponent: FC<ModalProps> = ({
   };
 
   const recoveryPasswordField: ForgotPassword = {
-    userName: "userName",
+    name: "name",
     email: "email",
     password: "password",
     role: "role",
@@ -74,7 +74,7 @@ export const ModalComponent: FC<ModalProps> = ({
   };
 
   const RecoverySchema = z.object({
-    [recoveryPasswordField?.userName]: z
+    [recoveryPasswordField?.name]: z
       .string()
       .nonempty(errorMessages.required),
     [recoveryPasswordField?.email]: z.string().nonempty(errorMessages.required),
@@ -112,7 +112,7 @@ export const ModalComponent: FC<ModalProps> = ({
 
       console.log("ENTER HERE? --> ", data);
 
-	  const apiUrl = "http://localhost:3000/register";
+	  const apiUrl = "http://localhost:3000/register-user";
 	  const response = await axios.post(apiUrl, data);
 
 	  console.log('response ---> ', response)
@@ -125,7 +125,7 @@ export const ModalComponent: FC<ModalProps> = ({
   };
 
   const forgotPasswordField: ForgotPassword = {
-    userName: "userName",
+    name: "name",
     email: "email",
     password: "password",
     role: "role",
@@ -149,11 +149,11 @@ export const ModalComponent: FC<ModalProps> = ({
         >
           <div className="flex  flex-col justify-between w-full  gap-8 textInput">
             <Input
-              register={register(forgotPasswordField?.userName)}
+              register={register(forgotPasswordField?.name)}
               label="Name"
               placeholder="Enter Name"
               required
-              error={errors[forgotPasswordField?.userName]?.message}
+              error={errors[forgotPasswordField?.name]?.message}
             />
             <Input
               register={register(forgotPasswordField?.email)}

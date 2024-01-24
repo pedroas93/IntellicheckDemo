@@ -74,10 +74,11 @@ export const UserTable: FC<SuccessProps> = () => {
       if (response.data && response.data.users) {
         const dataResponse = response.data.users.map((user) => ({
           id: user.id,
-          name: user.userName || "",
+          name: user.name || "",
           email: user.email || "",
           phone: user.phoneNumber || "",
           status: user.status || "",
+		  role: user.role|| "",
         }));
 
         console.log("Data Example:", dataResponse);
@@ -231,8 +232,8 @@ export const UserTable: FC<SuccessProps> = () => {
       omit: false,
     },
     {
-      name: "Email Address",
-      selector: (row: User): string => row?.email || "",
+      name: "Role",
+      selector: (row: User): string => row?.role || "",
       omit: false,
     },
     {

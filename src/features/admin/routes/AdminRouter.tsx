@@ -3,16 +3,16 @@ import UnauthenticatedRoute from "../../../routes/routes";
 import { Admin } from "../pages/Admin/Admin";
 export const AdminRoutes = [
   {
-    path: "/manage-users/admins",
+    path: "/manage-companies/admins",
     page: Admin,
     layout: DashboardLayout,
     name: "Reporting",
   },
   {
-    path: "/manage-companies/admins",
+    path: "/manage-users/admins",
     page: Admin,
     layout: DashboardLayout,
-    name: "Companies",
+    name: "users",
   },
 ];
 
